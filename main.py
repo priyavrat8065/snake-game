@@ -1,4 +1,5 @@
 from turtle import Screen, Turtle
+from snake import Snake
 import time
 
 screen = Screen()
@@ -9,26 +10,14 @@ screen.tracer(0)
 # TODO: 1) Create a snake body
 # when we create a turtle object. It is 20 x 20 pixels in dimension.
 # Master branch contains Angela's code, my-work branch contains my code.
-starting_positions = [(0, 0), (-20, 0), (-40, 0)]  # create a list of tuples where each tuple contains x and y
-# coordinates.
-segments = []
-for position in starting_positions:
-    new_segment = Turtle("square")
-    new_segment.color("white")
-    new_segment.penup()
-    new_segment.goto(position)
-    segments.append(new_segment)
+snake = Snake()
 
-# TODO: 2) Move the snake
-# We make the snake move forward in one direction without having to do anything
-# to make something continuously happen, we achieve that by using while loop. so let's create game_is_on variable
 game_is_on = True
 while game_is_on:
     screen.update()
-    time.sleep(0.1)
-    for pos in range(len(segments) - 1, 0, -1):
-        new_x = segments[pos - 1].xcor()
-        new_y = segments[pos - 1].ycor()
-        segments[pos].goto(new_x, new_y)
-    segments[0].fd(20)
+    time.sleep(0.1)  # It is basically controlling the screen refresh rate. The sooner screen updates/Refresh, the
+    # the faster snake appears to move.
+    # TODO: 2) Move the snake
+    snake.move()
+
 screen.exitonclick()
