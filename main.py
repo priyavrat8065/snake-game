@@ -1,10 +1,11 @@
 from turtle import Screen, Turtle
+import time
 
 screen = Screen()
 screen.setup(width=600, height=600)  # using keyword arguments
 screen.bgcolor("black")
 screen.title("My snake game")
-
+screen.tracer(0)
 # TODO: 1) Create a snake body
 # when we create a turtle object. It is 20 x 20 pixels in dimension.
 # Master branch contains Angela's code, my-work branch contains my code.
@@ -23,6 +24,8 @@ for position in starting_positions:
 # to make something continuously happen, we achieve that by using while loop. so let's create game_is_on variable
 game_is_on = True
 while game_is_on:
+    screen.update()
+    time.sleep(0.1)
     for seg in segments:
         seg.fd(20)
 screen.exitonclick()
