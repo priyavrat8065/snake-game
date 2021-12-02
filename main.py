@@ -11,7 +11,12 @@ screen.tracer(0)  # it is a kind of parda that hide what is happening behind the
 # when we create a turtle object. It is 20 x 20 pixels in dimension.
 # Master branch contains Angela's code, my-work branch contains my code.
 snake = Snake()
-
+# TODO: 3) Control the snake
+screen.listen()
+screen.onkey(snake.move_up, "Up")
+screen.onkey(snake.move_down, "Down")
+screen.onkey(snake.move_left, "Left")
+screen.onkey(snake.move_right, "Right")
 # TODO: 2) Move the snake
 # We make the snake move forward in one direction without having to do anything
 
