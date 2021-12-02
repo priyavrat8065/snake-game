@@ -12,6 +12,7 @@ gap = 0
 for snake_part in range(0, 3):
     new_part = Turtle("square")
     new_part.color("white")
+    new_part.penup()
     new_part.goto(x=0 + gap, y=0)
     gap -= 20
     snake.append(new_part)
