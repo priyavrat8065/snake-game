@@ -8,17 +8,11 @@ screen.title("My snake game")
 # TODO: 1) Create a snake body
 # when we create a turtle object. It is 20 x 20 pixels in dimension.
 # Master branch contains Angela's code, my-work branch contains my code.
-segment_1 = Turtle("square")
-segment_1.color("white")
-segment_1.goto(0, 0)
-
-segment_2 = Turtle("square")
-segment_2.color("white")
-segment_2.goto(-20, 0)
-
-segment_3 = Turtle("square")
-segment_3.color("white")
-segment_3.goto(-40, 0)
-
+starting_positions = [(0, 0), (-20, 0), (-40, 0)]  # create a list of tuples where each tuple contains x and y
+# coordinates.
+for position in starting_positions:
+    new_segment = Turtle("square")
+    new_segment.color("white")
+    new_segment.goto(position)
 
 screen.exitonclick()
