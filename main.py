@@ -18,6 +18,11 @@ for snake_part in range(0, 3):
 # TODO: 2) Move the snake
 # We make the snake move forward in one direction without having to do anything
 
+# to make something continuously happen, we achieve that by using while loop. so let's create game_is_on variable
+game_is_on = True
+while game_is_on:
+    for snake_part in snake:
+        snake_part.fd(20)
 
 
 
