@@ -26,6 +26,9 @@ game_is_on = True
 while game_is_on:
     screen.update()
     time.sleep(0.1)
-    for seg in segments:
-        seg.fd(20)
+    for pos in range(len(segments) - 1, 0, -1):
+        new_x = segments[pos - 1].xcor()
+        new_y = segments[pos - 1].ycor()
+        segments[pos].goto(new_x, new_y)
+    segments[0].fd(20)
 screen.exitonclick()
