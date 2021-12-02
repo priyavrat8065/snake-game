@@ -14,5 +14,6 @@ for position in starting_positions:
     new_segment = Turtle("square")
     new_segment.color("white")
     new_segment.goto(position)
-
+# TODO: 2) Move the snake
+# We make the snake move forward in one direction without having to do anything
 screen.exitonclick()
