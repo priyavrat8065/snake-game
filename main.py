@@ -26,9 +26,11 @@ screen.onkey(snake.move_right, "Right")
 game_is_on = True
 while game_is_on:
     screen.update()  # it basically tells when to remove that parda.
-    time.sleep(2)  # It is basically controlling the screen refresh rate. The sooner screen updates/Refresh, the
+    time.sleep(0.1)  # It is basically controlling the screen refresh rate. The sooner screen updates/Refresh, the
     # the faster snake appears to move.
     snake.move()
+    if snake.segments[0].distance(food) < 15:
+        food.food_refresh()
 
 
 # TODO: 3) Create a snake class in a separate snake.py file
