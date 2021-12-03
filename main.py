@@ -1,4 +1,5 @@
-from turtle import Screen, Turtle
+from turtle import Screen
+from food import Food
 from snake import Snake
 import time
 
@@ -11,6 +12,7 @@ screen.tracer(0)  # it is a kind of parda that hide what is happening behind the
 # when we create a turtle object. It is 20 x 20 pixels in dimension.
 # Master branch contains Angela's code, my-work branch contains my code.
 snake = Snake()
+food = Food()
 # TODO: 3) Control the snake
 screen.listen()
 screen.onkey(snake.move_up, "Up")
