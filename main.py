@@ -27,5 +27,6 @@ while game_is_on:
     # the faster snake appears to move.
     # TODO: 2) Move the snake
     snake.move()
-
+    if snake.head.distance(food) < 15:
+        food.food_refresh()
 screen.exitonclick()
