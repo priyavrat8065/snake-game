@@ -1,4 +1,6 @@
 from turtle import Screen
+
+from scoreboard import Scoreboard
 from food import Food
 from snake import Snake
 import time
@@ -13,6 +15,7 @@ screen.tracer(0)  # it is a kind of parda that hide what is happening behind the
 # Master branch contains Angela's code, my-work branch contains my code.
 snake = Snake()
 food = Food()
+scoreboard = Scoreboard()
 # TODO: 3) Control the snake
 screen.listen()
 screen.onkey(snake.move_up, "Up")
@@ -31,6 +34,7 @@ while game_is_on:
     snake.move()
     if snake.segments[0].distance(food) < 15:
         food.food_refresh()
+        scoreboard.increment_score()
 
 
 # TODO: 3) Create a snake class in a separate snake.py file
