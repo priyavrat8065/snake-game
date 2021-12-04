@@ -1,1 +1,6 @@
 .idea/
+__pycache__/scoreboard.cpython-310.pyc
+__pycache__/snake.cpython-310.pyc
+.*
+!/.gitignore
+__pycache__/

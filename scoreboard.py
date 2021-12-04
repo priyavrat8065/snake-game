@@ -24,4 +24,10 @@ class Scoreboard(Turtle):
         self.goto(x=10, y=280)
         self.write(self.score, align="right", font=("Arial", 14, "bold"))
 
+    def game_over(self):
+        self.goto(x=0, y=0)
+        self.write("GAME OVER!", align = "center", font=("Courier", 14, "normal"))
+
+
+
 

@@ -32,10 +32,20 @@ while game_is_on:
     time.sleep(0.1)  # It is basically controlling the screen refresh rate. The sooner screen updates/Refresh, the
     # the faster snake appears to move.
     snake.move()
+    if snake.segments[0].xcor() > 280 or snake.segments[0].xcor() < -280 or snake.segments[0].ycor() > 280 \
+            or snake.segments[0].ycor() < -280:
+        game_is_on = False
+        scoreboard.game_over()
     if snake.segments[0].distance(food) < 15:
         food.food_refresh()
         scoreboard.increment_score()
-
+        snake.increment_snake_len()
+    for segment in snake.segments:
+        if snake.segments[0] == segment:
+            pass
+        elif snake.segments[0].distance(segment) < 10:
+            game_is_on = False
+            scoreboard.game_over()
 
 # TODO: 3) Create a snake class in a separate snake.py file
 

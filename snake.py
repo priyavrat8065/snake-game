@@ -20,6 +20,13 @@ class Snake:
             self.gap += 20
             self.segments.append(new_part)
 
+    def increment_snake_len(self):
+        new_part = Turtle("square")
+        new_part.color("white")
+        new_part.penup()
+        new_part.goto(self.segments[-1].position())
+        self.segments.append(new_part)
+
     def move(self):
         for seg_pos in range(len(self.segments) - 1, 0, -1):
             new_x = self.segments[seg_pos - 1].xcor()
