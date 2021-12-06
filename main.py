@@ -1,5 +1,5 @@
 from turtle import Screen
-
+from snake_speed import time_delay
 from food import Food
 from snake import Snake
 from scoreboard import Scoreboard
@@ -25,7 +25,7 @@ screen.onkey(snake.move_right, "Right")
 game_is_on = True
 while game_is_on:
     screen.update()
-    time.sleep(0.1)  # It is basically controlling the screen refresh rate. The sooner screen updates/Refresh, the
+    time.sleep(time_delay)  # It is basically controlling the screen refresh rate. The sooner screen updates/Refresh,
     # the faster snake appears to move.
     # TODO: 2) Move the snake
     snake.move()
